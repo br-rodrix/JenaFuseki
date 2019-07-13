@@ -1,1 +1,1 @@
-web: java -jar  target/fuseki-server.jar
+web: java $JAVA_OPTS -jar target/*.jar
