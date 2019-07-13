@@ -1,1 +1,1 @@
-web: java -jar fuseki-server.jar
+web: java -jar  target/fuseki-server.jar
