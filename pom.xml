@@ -1,74 +1,46 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.apache.jena</groupId>
-  <artifactId>jena-fuseki</artifactId>
-  <version>3.12.0</version>
-  <packaging>jar</packaging>
-  <name>jena-fuseki Maven Webapp</name>
-  <url>http://maven.apache.org</url>
-  <properties>
-    <tomcat.version>8.5.34</tomcat.version>
-  </properties>
-  <dependencies>
-  <dependency>
-    <groupId>org.apache.jena</groupId>
-    <artifactId>jena-fuseki</artifactId>
-    <version>3.12.0</version>
-    <type>pom</type>
-    <scope>test</scope>
-</dependency>
-    <dependency>
-        <groupId>org.apache.tomcat.embed</groupId>
-        <artifactId>tomcat-embed-core</artifactId>
-        <version>${tomcat.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.tomcat.embed</groupId>
-        <artifactId>tomcat-embed-jasper</artifactId>
-        <version>${tomcat.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.tomcat</groupId>
-        <artifactId>tomcat-jasper</artifactId>
-        <version>${tomcat.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.tomcat</groupId>
-        <artifactId>tomcat-jasper-el</artifactId>
-        <version>${tomcat.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.tomcat</groupId>
-        <artifactId>tomcat-jsp-api</artifactId>
-        <version>${tomcat.version}</version>
-    </dependency>
-  </dependencies>
-  <build>
-    <finalName>embeddedTomcatSample</finalName>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<modelVersion>4.0.0</modelVersion>
+<parent>
+<groupId>org.apache.jena</groupId>
+<artifactId>jena</artifactId>
+<version>3.12.0</version>
+<relativePath>..</relativePath>
+</parent>
+<name>Apache Jena - Fuseki - A SPARQL 1.1 Server</name>
+<artifactId>jena-fuseki</artifactId>
+<version>3.12.0</version>
+<description>
+Fuseki is a SPARQL 1.1 Server which provides the SPARQL query, SPARQL update and SPARQL graph store protocols.
+</description>
+<packaging>pom</packaging>
+<url>https://jena.apache.org/</url>
+<organization>
+<name>Apache Jena</name>
+<url>https://jena.apache.org/</url>
+</organization>
+<licenses>
+<license>
+<name>Apache 2.0 License</name>
+<url>https://www.apache.org/licenses/LICENSE-2.0</url>
+</license>
+</licenses>
+<properties>
+<ver.jetty>9.4.12.v20180830</ver.jetty>
+<ver.shiro>1.2.6</ver.shiro>
+<maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssZ</maven.build.timestamp.format>
+<build.time.xsd>${maven.build.timestamp}</build.time.xsd>
+</properties>
+<modules>
+<module>jena-fuseki-core</module>
+<module>jena-fuseki-access</module>
+<module>jena-fuseki-main</module>
+<module>jena-fuseki-server</module>
+<module>jena-fuseki-webapp</module>
+<module>jena-fuseki-war</module>
+<module>jena-fuseki-fulljar</module>
+<module>apache-jena-fuseki</module>
+</modules>
     <plugins>
-        <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>appassembler-maven-plugin</artifactId>
-            <version>2.0.0</version>
-            <configuration>
-                <assembleDirectory>target</assembleDirectory>
-                <programs>
-                    <program>
-                        <mainClass>launch.Main</mainClass>
-                        <name>webapp</name>
-                    </program>
-                </programs>
-            </configuration>
-            <executions>
-                <execution>
-                    <phase>package</phase>
-                    <goals>
-                        <goal>assemble</goal>
-                    </goals>
-                </execution>
-            </executions>
-        </plugin>
 		 <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-dependency-plugin</artifactId>
