@@ -40,6 +40,7 @@ Fuseki is a SPARQL 1.1 Server which provides the SPARQL query, SPARQL update and
 <module>jena-fuseki-fulljar</module>
 <module>apache-jena-fuseki</module>
 </modules>
+<build>
     <plugins>
 		 <plugin>
             <groupId>org.apache.maven.plugins</groupId>
