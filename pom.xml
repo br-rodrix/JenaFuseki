@@ -30,16 +30,6 @@ Fuseki is a SPARQL 1.1 Server which provides the SPARQL query, SPARQL update and
 <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssZ</maven.build.timestamp.format>
 <build.time.xsd>${maven.build.timestamp}</build.time.xsd>
 </properties>
-<modules>
-<module>jena-fuseki-core</module>
-<module>jena-fuseki-access</module>
-<module>jena-fuseki-main</module>
-<module>jena-fuseki-server</module>
-<module>jena-fuseki-webapp</module>
-<module>jena-fuseki-war</module>
-<module>jena-fuseki-fulljar</module>
-<module>apache-jena-fuseki</module>
-</modules>
 <build>
     <plugins>
 		 <plugin>
